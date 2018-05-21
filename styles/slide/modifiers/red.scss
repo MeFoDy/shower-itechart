@@ -10,6 +10,7 @@
 
     h2 {
         color: white;
+        border-bottom-color: currentColor;
 
         &::before {
             background-color: white;

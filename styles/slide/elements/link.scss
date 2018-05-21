@@ -1,11 +1,18 @@
-.link::before {
+.link {
     position: relative;
-    top: 0.3em;
+
+    padding-left: 1.2em;
+}
+
+.link::before {
+    position: absolute;
+    top: 0.2em;
+    left: -0.1em;
 
     display: inline-block;
 
-    width: 1.6em;
-    height: 1.3em;
+    width: 1.3em;
+    height: 1.11em;
     padding-right: 0.3em;
 
     content: '';

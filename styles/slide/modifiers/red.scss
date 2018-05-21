@@ -1,0 +1,23 @@
+
+
+// ------------------------------------------------------------------
+// Red
+// ------------------------------------------------------------------
+
+&.red {
+    color: white;
+    background-color: $red;
+
+    h2 {
+        color: white;
+
+        &::before {
+            background-color: white;
+        }
+    }
+
+    &::after {
+        color: $red;
+        background-color: white;
+    }
+}

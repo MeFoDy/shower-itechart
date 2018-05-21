@@ -1,0 +1,45 @@
+
+
+// ------------------------------------------------------------------
+// Caption
+// ------------------------------------------------------------------
+// 1. Calculations ..... Font-size calculations
+// 2. Decoration ....... Global caption styling
+// 3. Contents ......... Caption’s contents
+// ------------------------------------------------------------------
+
+.caption {
+    // Decoration
+    display: none;
+
+    width: 100%;
+    margin-top: -0.2em;
+    padding: 0 1em 0.93em;
+
+    color: $grey;
+    // Calculations
+
+    @each $scale in 4, 2, 1 {
+        @include scale($scale) {
+            font-size: $gap / $scale;
+        }
+    }
+
+    // Contents
+
+    h1 {
+        padding-bottom: 0.15em;
+
+        font: bold 1em/1 PT Sans Narrow, sans-serif;
+    }
+
+    p {
+        font-size: 0.6em;
+        line-height: 1;
+    }
+
+    a {
+        color: $red;
+        text-shadow: 0 -1px 0 darken($red, 30%);
+    }
+}

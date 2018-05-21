@@ -1,0 +1,28 @@
+
+
+// ------------------------------------------------------------------
+// Half-red
+// ------------------------------------------------------------------
+
+&.half-red {
+    display: flex;
+
+    padding: 0;
+
+     > div {
+        display: flex;
+        flex-direction: column;
+
+        width: 60%;
+        padding: 70px;
+
+        justify-content: center;
+    }
+
+     > div:nth-child(2n + 1) {
+        width: 40%;
+
+        color: white;
+        background-color: $red;
+    }
+}

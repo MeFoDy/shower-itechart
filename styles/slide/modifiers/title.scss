@@ -1,0 +1,78 @@
+
+
+// ------------------------------------------------------------------
+// Title
+// ------------------------------------------------------------------
+
+&.title {
+    padding-top: 250px;
+
+    &.active {
+        z-index: 2;
+    }
+
+    &::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        display: block;
+
+        width: 100%;
+        height: 300px;
+
+        content: '';
+
+        background-image: url(../images/itechart-color.svg);
+        background-repeat: no-repeat;
+        background-position: 50px 50px;
+        background-size: 300px 100px;
+    }
+
+    &::after {
+        top: auto;
+        right: 0;
+        bottom: 40px;
+
+        width: 100%;
+        height: 20%;
+        padding-top: 15px;
+
+        content: '';
+
+        background-color: transparent;
+        background-image: url(../images/itechart-squares.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    h2 {
+        position: relative;
+
+        width: auto;
+        height: auto;
+        padding-top: 0;
+        padding-left: 0;
+
+        border: none;
+
+        font-size: 3em;
+        line-height: 100%;
+
+        &::before {
+            display: none;
+        }
+    }
+
+    .author {
+        font-size: 1.5em;
+        line-height: 100%;
+    }
+
+    .date {
+        color: $red;
+
+        font-size: 1em;
+        line-height: 100%;
+    }
+}

@@ -1,0 +1,76 @@
+.terminal {
+    $br: 7px;
+    $s: 12px;
+    $mh: 25px;
+
+    position: relative;
+
+    width: 800px;
+    margin: 0 auto 1.2em;
+    padding: 10px;
+
+    color: #b4c4c6;
+    border-radius: 0 0 $br $br;
+    background-color: #0f3642;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05),
+    0 0 30px 1px rgba(0, 0, 0, 0.5);
+
+    font-family: 'PT Mono', monospace;
+    font-size: 0.8em;
+    line-height: 1.2em;
+
+    &::before {
+        position: absolute;
+        top: -$mh;
+        left: 0;
+
+        display: block;
+        overflow: hidden;
+
+        width: 100%;
+        height: $mh;
+        padding: 0 80px;
+
+        content: attr(data-content);
+        text-align: center;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+
+        color: #4c3436;
+        border-radius: $br $br 0 0;
+        background: linear-gradient(0deg, #d8d8d8, #ececec);
+
+        font-family: 'PT Sans', sans-serif;
+        font-size: 16px;
+        line-height: $mh;
+    }
+
+    &::after {
+        position: absolute;
+        top: -#{floor($mh - ($mh - $s)/2)};
+        left: 10px;
+
+        width: $s;
+        height: $s;
+
+        content: '';
+
+        border-radius: 100%;
+        background: #f95c5b;
+        box-shadow: 0 0 0 1px #da3d42,
+        ($s+10px) 0 0 0 #fabe3b,
+        ($s+10px) 0 0 1px #ecb03e,
+        ($s+10px)*2 0 0 0 #38cd46,
+        ($s+10px)*2 0 0 1px #2eae32;
+    }
+
+    p {
+        margin: 0;
+
+        &::before {
+            content: '~$ ';
+
+            color: #5ed7ff;
+        }
+    }
+}

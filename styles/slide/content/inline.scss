@@ -1,0 +1,60 @@
+
+
+// ------------------------------------------------------------------
+// Inline
+// ------------------------------------------------------------------
+
+a {
+    @include underline(currentColor, 0.09);
+
+    color: $blue;
+}
+
+b,
+strong {
+    font-weight: bold;
+}
+
+i,
+em,
+dfn {
+    font-style: italic;
+}
+
+code,
+kbd,
+mark,
+samp {
+    padding: 0.1em 0.3em;
+
+    border-radius: 0.2em;
+}
+
+code,
+kbd,
+samp {
+    background: $grey-back;
+
+    font-family: PT Mono, monospace;
+    line-height: 1;
+}
+
+mark {
+    background: $yellow;
+}
+
+sub,
+sup {
+    position: relative;
+
+    font-size: 75%;
+    line-height: 0;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
+sup {
+    top: -0.5em;
+}

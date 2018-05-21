@@ -1,0 +1,87 @@
+
+
+// ------------------------------------------------------------------
+// Code
+// ------------------------------------------------------------------
+// 1. Outer ............ Main <pre> container
+// 2. Inner ............ Generic <code> container
+//    - Marked Lines ... Statically highlighted lines
+//    - Line Numbers ... Generated line numbers
+// 3. Marked ........... Highlighted fragments
+//    - Important ...... Bold and inverted
+//    - Comment ........ Subtle and grey
+// ------------------------------------------------------------------
+
+// Outer
+
+pre {
+    margin-bottom: 1em;
+
+    counter-reset: code;
+    white-space: normal;
+
+    // Inner
+
+    code {
+        display: block;
+
+        width: calc(100% + 100px + 100px);
+        margin-left: -100px;
+        padding: 0 0 0 100px;
+
+        white-space: pre;
+        tab-size: 4;
+
+        border-radius: 0;
+        background: none;
+
+        line-height: 2;
+
+        &:not(:only-child) {
+            // Marked Lines
+
+            &.mark {
+                background: $grey-back;
+            }
+
+            // Line Numbers
+
+            &::before {
+                position: absolute;
+
+                margin-left: -2em;
+
+                content: counter(code, decimal-leading-zero)'.';
+                counter-increment: code;
+
+                color: lighten($grey, 25%);
+            }
+        }
+    }
+
+    // Marked
+
+    mark {
+        position: relative;
+        z-index: -1;
+
+        margin: 0 -0.3em;
+
+        // Important
+
+        &.important {
+            color: #ffffff;
+            background: #cc0000;
+
+            .hljs-string {
+                color: #ffffff;
+            }
+        }
+    }
+
+    // Comment
+
+    .comment {
+        color: #999999;
+    }
+}

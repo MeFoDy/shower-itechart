@@ -1,0 +1,25 @@
+.link::before {
+    position: relative;
+    top: 0.3em;
+
+    display: inline-block;
+
+    width: 1.6em;
+    height: 1.3em;
+    padding-right: 0.3em;
+
+    content: '';
+    text-decoration: none;
+
+    background-color: white;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.link-github::before {
+    background-image: url('../images/github-logo.svg');
+}
+
+.link-codepen::before {
+    background-image: url('../images/codepen-logo.svg');
+}

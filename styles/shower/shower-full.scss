@@ -1,0 +1,25 @@
+
+
+// ------------------------------------------------------------------
+// Shower Full
+// ------------------------------------------------------------------
+
+.shower.full {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    overflow: hidden;
+
+    width: $width;
+    height: $height;
+    margin: (- $height / 2) 0 0 (- $width / 2);
+
+    background: #000000;
+    // Elements
+
+    @import
+    '../slide/slide-full',
+    '../progress/progress-full',
+    '../region/region-full';
+}

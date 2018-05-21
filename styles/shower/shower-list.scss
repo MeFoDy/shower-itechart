@@ -1,0 +1,29 @@
+
+
+// ------------------------------------------------------------------
+// Shower List
+// ------------------------------------------------------------------
+
+.shower.list {
+    // IE10-11 scrolling fix
+    position: absolute;
+
+    display: flex;
+    clip: rect(0, auto, auto, 0);
+
+    width: 100%;
+
+    background: $grey-back;
+
+    flex-wrap: wrap;
+    // Elements
+    @import
+    '../caption/caption-list',
+    '../slide/slide-list',
+    '../badge/badge-list';
+    @each $scale in 4, 2, 1 {
+        @include scale($scale) {
+            padding-top: $gap / $scale;
+        }
+    }
+}

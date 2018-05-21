@@ -1,0 +1,65 @@
+
+
+// ------------------------------------------------------------------
+// Lists
+// ------------------------------------------------------------------
+
+ol,
+ul {
+    margin-bottom: 1em;
+
+    counter-reset: list;
+
+    li {
+        text-indent: -2em;
+
+        page-break-inside: avoid;
+
+        // Marker
+
+        &::before {
+            display: inline-block;
+
+            width: 2em;
+
+            text-align: right;
+
+            color: $red;
+        }
+    }
+
+    ol,
+    ul {
+        margin-bottom: 0;
+        margin-left: 2em;
+    }
+}
+
+// Markers
+
+ul > li::before {
+    padding-right: 0.5em;
+
+    content: '•';
+}
+
+ul > li:lang(ru)::before {
+    content: '—';
+}
+
+ol > li::before {
+    padding-right: 0.4em;
+
+    content: counter(list)'.';
+    counter-increment: list;
+}
+
+// Custom
+
+ol > li[value]::before {
+    content: attr(value)'.';
+}
+
+ul > li[value]::before {
+    content: attr(value);
+}

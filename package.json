@@ -1,0 +1,49 @@
+{
+  "name": "shower-itechart",
+  "description": "iTechArt theme for Shower HTML presentation engine",
+  "version": "1.0.0",
+  "author": {
+    "name": "Nikita Dubko",
+    "url": "https://mefody.github.io/"
+  },
+  "homepage": "https://github.com/MeFoDy/shower-itechart",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/MeFoDy/shower-itechart.git"
+  },
+  "bugs": {
+    "url": "https://github.com/MeFoDy/shower-itechart/issues"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "autoprefixer": "^7.1.2",
+    "browser-sync": "^2.14.0",
+    "gulp": "^4.0.0",
+    "gulp-autoprefixer": "^5.0.0",
+    "gulp-babel": "^7.0.1",
+    "gulp-cache-bust": "^1.3.0",
+    "gulp-clean": "^0.4.0",
+    "gulp-csso": "^3.0.1",
+    "gulp-header": "^2.0.5",
+    "gulp-help-doc": "^1.1.0",
+    "gulp-htmlmin": "^4.0.0",
+    "gulp-if": "^2.0.2",
+    "gulp-notify": "^3.2.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-replace": "^0.6.1",
+    "gulp-sass": "^3.2.0",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-uglify": "^3.0.0",
+    "gulp-util": "^3.0.8",
+    "path-exists-cli": "^1.0.0",
+    "postcss-csso": "^2.0.0",
+    "require-dir": "^1.0.0",
+    "shower-core": "latest"
+  },
+  "scripts": {
+    "dev": "gulp serve",
+    "build": "gulp build",
+    "build-prod": "gulp build --production",
+    "test": "path-exists styles/screen-16x10.css && path-exists styles/screen-4x3.css"
+  }
+}

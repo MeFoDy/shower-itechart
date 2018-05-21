@@ -1,0 +1,89 @@
+
+// ------------------------------------------------------------------
+// Defaults
+// ------------------------------------------------------------------
+// 1. Sizes ............ Global layout and color variables
+//    - Width .......... Default slide width 1024 px
+//    - Height ......... Height calculated based on width and ratio
+//    - Gap ............ Gap between slides in List mode
+// 2. Colors ........... Global color variables
+// 3. Retina ........... Retina detection mixin
+// 4. Underliner ....... Mixin for drawing lines using gradient
+// 5. Scale ............ MQ generator based on slides scale factor
+// 6. Offscreen ........ Mixing for hiding things in accessible way
+// ------------------------------------------------------------------
+
+// Sizes
+
+$width: 1024px;
+$height: $width/$ratio;
+$gap: 100px;
+
+// Colors
+
+$yellow: #fafaa2;
+$grey: #404040;
+$grey-light: #808080;
+$grey-border: #bfbfbf;
+$grey-back: rgba($grey, 0.10);
+$grey-line: rgba($grey, 0.5);
+$red: #ed1c24;
+$blue: #4b86c2;
+
+// Retina
+
+@mixin retina {
+    @media (min-resolution:2dppx) {
+        @content;
+    }
+}
+
+// Underliner
+
+@mixin underline($color, $width) {
+    background: linear-gradient(
+    to top,
+    $color #{$width}em,
+    transparent #{$width}em
+    ) repeat-x;
+}
+
+// Scale
+
+@mixin scale($scale) {
+    @if $scale == 4 {
+        @content;
+    }
+    @else {
+        @media (min-width:2 * ($width / $scale) + ($gap / $scale) * 3) {
+            @content;
+        }
+    }
+}
+
+// Offscreen
+
+@mixin offscreen {
+    position: absolute;
+
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+
+    border: none;
+}
+
+@function -stepBg($initial, $n: 30) {
+    $s: 100% / $n;
+    $bg: ();
+
+    @for $i from 0 through $n {
+        $bg: $bg, linear-gradient(white, white) 0 $s*$i #{'/'} $s*$i $s+1 no-repeat;
+    }
+
+    @return $bg, $initial;
+}

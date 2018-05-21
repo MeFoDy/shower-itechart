@@ -1,0 +1,52 @@
+
+
+// ------------------------------------------------------------------
+// Basic
+// ------------------------------------------------------------------
+
+h2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: block;
+
+    width: 100%;
+    height: 90px;
+    margin-bottom: 34px;
+    padding-top: 20px;
+    padding-left: 70px;
+
+    color: $grey;
+    border-bottom: 1px solid $grey-border;
+
+    font: bold 50px/1 PT Sans Narrow, sans-serif;
+    line-height: 50px;
+
+    &::before {
+        position: absolute;
+        top: 20px;
+        left: 0;
+
+        width: 15px;
+        height: 50px;
+
+        content: '';
+
+        background-color: $red;
+    }
+}
+
+h3 {
+    font-size: 1.5em;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+p {
+    margin-bottom: 1em;
+
+    &.note {
+        color: lighten($grey, 25%);
+    }
+}

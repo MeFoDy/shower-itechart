@@ -1,0 +1,21 @@
+.strike {
+    position: relative;
+
+    text-decoration: none;
+
+    &::after {
+        position: absolute;
+        top: 50%;
+        left: -10px;
+
+        display: block;
+
+        width: calc(100% + 20px);
+        height: 7px;
+
+        content: '';
+        transform: rotate(-5deg);
+
+        background-color: $red;
+    }
+}

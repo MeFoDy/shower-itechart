@@ -1,0 +1,31 @@
+
+
+// ------------------------------------------------------------------
+// Shout
+// ------------------------------------------------------------------
+
+.shout {
+    position: absolute;
+    top: 50%;
+    left: 0;
+
+    width: 100%;
+    height: auto;
+    padding: 0 20px;
+
+    transform: translateY(-50%);
+    text-align: center;
+
+    border: none;
+
+    font-size: 90px;
+    line-height: 1;
+
+    &::before {
+        display: none;
+    }
+
+    a {
+        @include underline(currentColor, 0.11);
+    }
+}

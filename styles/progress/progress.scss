@@ -1,0 +1,32 @@
+
+
+// ------------------------------------------------------------------
+// Progress
+// ------------------------------------------------------------------
+
+.progress {
+    $size: 10px;
+
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    left: - $size * 2;
+
+    display: none;
+    clip: rect($size, $width + $size * 2, $size * 2, $size * 2);
+
+    box-sizing: content-box;
+    width: 0;
+    height: 0;
+
+    transition: width 0.2s linear;
+
+    border: $size solid $red;
+    border-right-color: transparent;
+
+    // Hiding corner
+
+    &[style*='100%'] {
+        padding-left: $size;
+    }
+}

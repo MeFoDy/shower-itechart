@@ -1,0 +1,75 @@
+
+
+// ------------------------------------------------------------------
+// Slide
+// ------------------------------------------------------------------
+// 1. Number ........... Red ribbon with page number
+// 2. Content .......... Various content types
+// 3. Modifiers......... Slide modifiers
+// 4. Elements ......... Content elements
+// ------------------------------------------------------------------
+
+.slide {
+    position: relative;
+    z-index: 1;
+
+    overflow: hidden;
+
+    width: $width;
+    height: $height;
+    padding: 110px 70px 0;
+
+    background: #ffffff;
+
+    font-size: 25px;
+    // Content
+
+    @import
+    'content/basic',
+    'content/inline',
+    'content/quote',
+    'content/lists',
+    'content/table',
+    'content/code',
+    'content/footer';
+    // Modifiers
+    @import
+    'modifiers/grid',
+    'modifiers/black',
+    'modifiers/white',
+    'modifiers/red',
+    'modifiers/half-red',
+    'modifiers/clear',
+    'modifiers/title';
+    // Elements
+    @import
+    'elements/columns',
+    'elements/shout',
+    'elements/link',
+    'elements/strike',
+    'elements/label',
+    'elements/cover',
+    'elements/place',
+    'elements/red-title',
+    'elements/terminal';
+
+    // Number
+
+    &::after {
+        position: absolute;
+        top: 20px;
+        right: 0;
+
+        width: 60px;
+        height: 50px;
+        padding-top: 0;
+
+        content: counter(slide);
+        counter-increment: slide;
+        text-align: center;
+
+        color: #ffffff;
+        border-top-left-radius: 10px;
+        background: $red;
+    }
+}

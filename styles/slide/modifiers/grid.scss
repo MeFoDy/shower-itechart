@@ -1,0 +1,17 @@
+
+
+// ------------------------------------------------------------------
+// Grid
+// ------------------------------------------------------------------
+
+&.grid {
+    @include retina {
+        background-image: url(../images/grid@2x.png);
+        background-size: $width auto;
+    }
+
+    background-image: url(../images/grid.png);
+    // Crisp guides
+
+    image-rendering: pixelated;
+}

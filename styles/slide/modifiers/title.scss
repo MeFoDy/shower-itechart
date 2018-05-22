@@ -5,8 +5,6 @@
 // ------------------------------------------------------------------
 
 &.title {
-    padding-top: 250px;
-
     &.active {
         z-index: 2;
     }
@@ -49,10 +47,15 @@
     h2 {
         position: relative;
 
+        display: table-cell;
+
         width: auto;
-        height: auto;
+        height: 225px;
         padding-top: 0;
+        padding-bottom: 24px;
         padding-left: 0;
+
+        vertical-align: bottom;
 
         border: none;
 

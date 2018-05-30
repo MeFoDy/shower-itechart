@@ -10,6 +10,8 @@
 // ------------------------------------------------------------------
 
 .slide {
+    --h-size: 40px;
+
     position: relative;
     z-index: 1;
 
@@ -17,7 +19,7 @@
 
     width: $width;
     height: $height;
-    padding: 110px 70px 0;
+    padding: calc(70px + var(--h-size, 0px)) 70px 0;
 
     background: #ffffff;
 
@@ -40,6 +42,7 @@
     'modifiers/red',
     'modifiers/half-red',
     'modifiers/clear',
+    'modifiers/no-heading',
     'modifiers/title';
     // Elements
     @import
